@@ -1,13 +1,24 @@
 # Weather_News
 Weather information of any area using python
 
-    srch=srch.replace("jarvis",'')
-    srch=srch.replace("weather","")
-    srch=srch.replace("of",'')
-    srch=srch.replace('news','')
-    srch=srch.replace('report','')
-    srch=srch.replace("tell me","")
-    srch=srch.replace("information",'')
+    import pyttsx3 #for speak
+    assistant=pyttsx3.init("sapi5") #creation object for speak
+    voices=assistant.getProperty('voices') #check voices
+    # print(voices)
+    assistant.setProperty('voice', voices[1].id) # 1 for female 0 for male
+
+   rate=assistant.getProperty('rate')
+   assistant.setProperty('rate',170) #rate of voices
+
+    #speak function for speaking
+    def speak(audio):
+        assistant.say(audio) #say() method to speak 
+        print("")
+        assistant.runAndWait() #to run the speech we use runAndWait() All the say() texts won’t be said unless the interpreter encounters runAndWait().
+        print("")
+    srch=input("Enter city name :")
+    import requests #for request data from webpage
+    import json #for convert dictionary
     #weather api
     url='http://api.openweathermap.org/data/2.5/weather?q=+'+srch+'&appid=067fda8d35b3c88f50a2be0f2945f1f5'
     data=requests.get(url).text #get all the information as string
