@@ -6,9 +6,8 @@ Weather information of any area using python
     voices=assistant.getProperty('voices') #check voices
     # print(voices)
     assistant.setProperty('voice', voices[1].id) # 1 for female 0 for male
-
-   rate=assistant.getProperty('rate')
-   assistant.setProperty('rate',170) #rate of voices
+    rate=assistant.getProperty('rate')
+    assistant.setProperty('rate',170) #rate of voices
 
     #speak function for speaking
     def speak(audio):
