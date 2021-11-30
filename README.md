@@ -1,5 +1,6 @@
 # Weather_News
-#Weather information of any area using python
+Weather information of any area using python
+
     srch=srch.replace("jarvis",'')
     srch=srch.replace("weather","")
     srch=srch.replace("of",'')
